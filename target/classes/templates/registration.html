@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<style>
+
+textarea {
+  outline: none;
+  border: none;
+}
+
+textarea:focus, input:focus {
+  border-color: transparent !important;
+}
+
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+button:active{
+outline: none !important;
+	border: none;
+background:#4d4d4d
+}
+button:hover {
+	cursor: pointer;
+}
+.login100-form-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 100px;
+  height: 50px;
+  background-color: #a9a9a9;
+  border-radius: 25px;
+margin:auto;
+  font-family: Ubuntu-Bold;
+  font-size: 15px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+/*------------------------------------------------------------------
+[ Input ]*/
+
+.wrap-input100 {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 27px;
+  position: relative;
+  z-index: 1;
+}
+
+.input100 {
+  font-family: Ubuntu-Bold;
+  font-size: 15px;
+  color: #1b3815;
+  line-height: 1.2;
+margin:auto;
+  position: relative;
+  display: block;
+  width: 300px;
+  height: 55px;
+  background: #ebebeb;
+  border-radius: 27px;
+  padding: 0 35px 0 35px;
+}
+.input101 {
+  font-family: Ubuntu-Bold;
+  font-size: 15px;
+  color: #1b3815;
+  line-height: 1.2;
+
+  position: static;
+  display: block;
+  width: 50px;
+  height: 55px;
+  background: #ebebeb;
+  border-radius: 27px;
+  padding: 0 35px 0 35px;
+}
+body{
+background:#4d4d4d;
+}
+}
+.login100-form {
+  font-family: JosefinSans-Bold;
+  font-size: 30px;
+  color: #fff;
+  line-height: 1.2;
+  text-align: center;
+
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: сalc(50%);
+  left: сalc(50%);
+  background-color: #57b846;
+  padding-top: 50px;
+  padding-bottom: 39px;
+}
+.login100-form {
+  width: 100%;
+  position: relative;
+}
+form { 
+  background-color: #57b846;
+  width: 450px;
+  margin: auto auto auto auto;
+  padding-top: 50px;
+  padding-bottom: 39px;
+  border-radius: 30px;
+  text-align: center;
+}
+
+</style>
+<body>
+
+ <form th:action="@{/registration}" method="post" enctype="multipart/form-data"  >
+ <h1 th:text= "${message}"/>
+<div >
+						<input class="input100" type="text" min="1" max="5" name="username" placeholder="Username">
+					<br>
+						<input class="input100" type="password" min="1" max="5" name="password" placeholder="Password">
+						<br>
+						<input class="input100" type="text" min="1" max="5"  name="email" placeholder="Email">
+						<br>
+						<input class="input100" type="number" min="1" max="5" name="math" placeholder="Оценка по математике">
+						<br>
+						<input class="input100" type="number" min="1" max="5" name="physics" placeholder="Оценка по физике">
+						<br>
+						<input class="input100" type="number" min="1" max="5" name="history" placeholder="Оценка по истории">
+						<br>
+						<input class="input100" type="number" min="1" max="5" name="ukrainean" placeholder="Оценка по Украинскому языку">
+						<br>
+						<input class="input100" type="number" min="1" max="5"name="english" placeholder="Оценка по Английскому языку">
+						<br>
+						<input type="file" name="file" placeholder="Аттестат" >
+					</div>
+					<br>
+					 <div><button type="submit" class="login100-form-btn">
+							Sign in
+						</button></div>
+					</form>
+					</body>
+</html>

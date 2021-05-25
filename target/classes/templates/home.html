@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+  <style>
+  body{
+background:#4d4d4d;
+}
+input {outline:none;}
+button {outline:none;}
+   button:active{
+outline: none !important;
+	border: none;
+background:#4d4d4d
+}
+.login100-form-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 250px;
+  height: 50px;
+  background-color: #a9a9a9;
+  border-radius: 25px;
+margin:auto auto auto auto;
+  font-family: Ubuntu-Bold;
+  font-size: 15px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+h1{
+margin:auto auto auto auto;
+color: #fff;
+}
+fieldset{
+outline:none;
+border:0 none;
+}
+  </style>
+    
+    <body>
+        <fieldset>
+        <div><h1>Welcome!</h1>
+        <form action="/hello"><button class="login100-form-btn">Войти в систему</button></form><form action="/registration"><button class="login100-form-btn">Зарегестрироваться в системе</button></form>
+        </div>
+        </fieldset>
+    </body>
+</html>
