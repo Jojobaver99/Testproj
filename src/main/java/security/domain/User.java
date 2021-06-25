@@ -1,4 +1,4 @@
-package security;
+package security.domain;
 
 import java.util.Set;
 
@@ -13,60 +13,55 @@ public class User {
 @GeneratedValue(strategy=GenerationType.AUTO)
 private Long id;
 private String username;
+private String surname;
+private String fathername;
 private String password;
 private String email;
 private String fileName;
-private int math;
-private int physics;
-private int history;
-private int ukrainean;
-private int english; 
 private boolean active;
 @ElementCollection(targetClass=Role.class,fetch=FetchType.EAGER)
 @CollectionTable(name="user_role",joinColumns=@JoinColumn(name="user_id"))
 @Enumerated(EnumType.STRING)
 private Set<Role> roles;
+@OneToOne
+@JoinColumn(name = "rating", referencedColumnName = "id")
+private Rating rating;
+@OneToOne
+@JoinColumn(name = "cert", referencedColumnName = "id")
+private Certificate certificate;
+@OneToOne
+@JoinColumn(name = "userfac", referencedColumnName = "id")
+private UserFac userfac;
+
+public UserFac getUserfac() {
+	return userfac;
+}
+public void setUserfac(UserFac userfac) {
+	this.userfac = userfac;
+}
 public Long getId() {
 	return id;
 }
 public String getEmail() {
 	return email;
 }
+public Certificate getCertificate() {
+	return certificate;
+}
+public void setCertificate(Certificate certificate) {
+	this.certificate = certificate;
+}
 public void setEmail(String email) {
 	this.email = email;
 }
-public int getMath() {
-	return math;
-}
-public void setMath(int math) {
-	this.math = math;
-}
-public int getPhysics() {
-	return physics;
-}
-public void setPhysics(int physics) {
-	this.physics = physics;
-}
-public int getHistory() {
-	return history;
-}
-public void setHistory(int history) {
-	this.history = history;
-}
-public int getUkrainean() {
-	return ukrainean;
-}
-public void setUkrainean(int ukrainean) {
-	this.ukrainean = ukrainean;
-}
-public int getEnglish() {
-	return english;
-}
-public void setEnglish(int english) {
-	this.english = english;
-}
 public void setId(Long id) {
 	this.id = id;
+}
+public Rating getRating() {
+	return rating;
+}
+public void setRating(Rating rating) {
+	this.rating = rating;
 }
 public String getUsername() {
 	return username;
@@ -97,5 +92,17 @@ public String getFileName() {
 }
 public void setFileName(String fileName) {
 	this.fileName = fileName;
+}
+public String getSurname() {
+	return surname;
+}
+public void setSurname(String surname) {
+	this.surname = surname;
+}
+public String getFathername() {
+	return fathername;
+}
+public void setFathername(String fathername) {
+	this.fathername = fathername;
 }
 }

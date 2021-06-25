@@ -1,4 +1,4 @@
-package security;
+package security.config;
 
 import javax.sql.DataSource;
 
@@ -24,7 +24,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 			.authorizeRequests()
-				.antMatchers("/", "/home","/registration").permitAll()
+				.antMatchers("/", "/home","/registration","/facin").permitAll()
 				.anyRequest().authenticated()
 				.and()
 			.formLogin()

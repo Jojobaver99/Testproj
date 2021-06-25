@@ -122,28 +122,35 @@ form {
   border-radius: 30px;
   text-align: center;
 }
-
+.input100 {
+  font-family: Ubuntu-Bold;
+  font-size: 15px;
+  color: #1b3815;
+  line-height: 1.2;
+margin:auto;
+  position: relative;
+  display: block;
+  width: 300px;
+  height: 55px;
+  background: #ebebeb;
+  border-radius: 27px;
+  padding: 0 35px 0 35px;
+}
 </style>
 <body>
 
  <form th:action="@{/registration}" method="post" enctype="multipart/form-data"  >
  <h1 th:text= "${message}"/>
 <div >
-						<input class="input100" type="text" min="1" max="5" name="username" placeholder="Username">
+						<input  class="input100" required type="text" min="1" max="5" name="username" placeholder="Имя">
 					<br>
-						<input class="input100" type="password" min="1" max="5" name="password" placeholder="Password">
+					<input required class="input100" type="text" min="1" max="5" name="surname" placeholder="Фамилия">
+					<br>
+					<input required class="input100" type="text" min="1" max="5" name="fathername" placeholder="Отчество">
+					<br>
+						<input required class="input100" type="password" min="1" max="5" name="password" placeholder="Пароль">
 						<br>
-						<input class="input100" type="text" min="1" max="5"  name="email" placeholder="Email">
-						<br>
-						<input class="input100" type="number" min="1" max="5" name="math" placeholder="Оценка по математике">
-						<br>
-						<input class="input100" type="number" min="1" max="5" name="physics" placeholder="Оценка по физике">
-						<br>
-						<input class="input100" type="number" min="1" max="5" name="history" placeholder="Оценка по истории">
-						<br>
-						<input class="input100" type="number" min="1" max="5" name="ukrainean" placeholder="Оценка по Украинскому языку">
-						<br>
-						<input class="input100" type="number" min="1" max="5"name="english" placeholder="Оценка по Английскому языку">
+						<input required class="input100" type="text" min="1" max="5"  name="email" placeholder="Email">
 						<br>
 						<input type="file" name="file" placeholder="Аттестат" >
 					</div>

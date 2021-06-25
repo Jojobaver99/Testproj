@@ -37,7 +37,26 @@ margin:auto auto auto auto;
 }
       </style>
     <body>
-  <img th:src="@{/img/{filename}(filename = ${user.filename})}">
+    			
+<h1 th:text= "${message}"/>
+  <form method="post" th:action="@{/point}" enctype="multipart/form-data">
+  <input class="input100" type="number" min="1" max="5" name="math" placeholder="Оценка по математике">
+						<br>
+						<input class="input100" type="number" min="1" max="5" name="physics" placeholder="Оценка по физике" required>
+						<br>
+						<input class="input100" type="number" min="1" max="5" name="history" placeholder="Оценка по истории" required >
+						<br>
+						<input class="input100" type="number" min="1" max="5" name="ukrainean" placeholder="Оценка по Украинскому языку" required>
+						<br>
+						<input class="input100" type="number" min="1" max="5"name="english" placeholder="Оценка по Английскому языку" required>
+						<br>
+						<input type="file" name="file" placeholder="Аттестат" >
+						<br>
+						<div><button type="submit" class="login100-form-btn">
+							Заполнить оценки
+						</button></div>
+						</form>
+						
   <form action="/hello">
    <button class="login100-form-btn">Обратно</button>
   </form>

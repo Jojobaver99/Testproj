@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+      <style>
+      body{
+background:#4d4d4d;
+
+}
+span{
+color:white;
+
+}
+.buttonform{
+ display: inline-flex;
+  border: none;
+  justify-content: center;
+ }
+font{
+color:white;'
+}
+ol{
+color:white;'
+}
+.spanj{
+font-size: 17px;
+}
+.login100-form-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 300px;
+  height: 50px;
+  background-color: #a9a9a9;
+  border-radius: 25px;
+margin:auto auto auto auto;
+  font-family: Ubuntu-Bold;
+  font-size: 15px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+button:active{
+outline: none !important;
+	border: none;
+background:#4d4d4d
+}
+button:hover {
+	cursor: pointer;
+}
+.forme{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+justify-content: center;
+margin: auto auto auto auto;
+}
+.layer {
+		    overflow: auto; /* Добавляем полосы прокрутки */
+		background:#333333;
+		    height: 300px; /* Высота блока */
+		    padding: 5px; /* Поля вокруг текста */
+		    border: none; /* Параметры рамки */
+		    
+   } 
+summary::-webkit-details-marker {
+  display: none;
+}
+summary {display: block;}
+details summary:after {
+  content: "  + ";
+}
+ details[open] summary:after {
+  content: " -  ";
+}
+::-webkit-scrollbar {width: 12px;height: 12px;};
+ ::-webkit-scrollbar-track-piece {background:rgba(0,0,0,0);}
+::-webkit-scrollbar-thumb:vertical {height:10px;background:#4d4d4d;}
+::-webkit-scrollbar-thumb:vertical:hover {background:#71CA55;}
+::-webkit-scrollbar-thumb:horizontal {width:10px;background:#4d4d4d;}
+::-webkit-scrollbar-thumb:horizontal:hover {background:#71CA55;}
+.spans{
+font-size: 15px;
+}
+.checkbox {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	margin: 10px 0 0 20px;
+}
+
+      </style>
+      
+      <body>
+      
+      <form class="layer">
+      <ol id="names">
+       <li th:each ="name : ${names}" class="spanj">
+         <details>
+   <summary><span th:utext="${name.getName()   }" class="spanj"/></span> <input type="checkbox" th:value="*{name.getId}" name="id" id="id"/> </summary>
+          <div><font class="spans">Оценка по математике:</font> <span th:utext="${name.getMath} " class="spans">        </span> </div>
+          <div><font class="spans">Оценка по английскому:</font> <span th:utext="${name.getEnglish} "class="spans">    </span></div>
+          <div> <font class="spans">Оценка по истории:</font> <span th:utext="${name.getHistory} "class="spans">       </span> </div>
+          <div><font class="spans">Оценка по украинскому:</font> <span th:utext="${name.getUkrainean} "class="spans">  </span> </div>
+          <div><font class="spans"> Оценка по физике:</font> <span th:utext="${name.getPhysics}"class="spans">         </span> </div>
+          <div><font class="spans"> Средний бал по факультету :</font> <span th:utext="${name.getAverage}"class="spans">   </span> </div>
+  </details>
+ <br>
+       </li>
+       </ol>
+       </form>
+       <br>
+    <span class="forme">
+    
+       <form th:action="@{/filter1}" method="post" class="buttonform" >
+        <button type="submit" class="login100-form-btn">
+							Упорядочить a-z
+						</button>
+       </form> <font>&#8194;</font>
+        <form th:action="@{/filter2}" method="post" class="buttonform">
+        <button type="submit" class="login100-form-btn">
+							Упорядочить z-a
+						</button>
+       </form> <font>&#8194;</font>
+        <form th:action="@{/filter3}" method="post" class="buttonform">
+       <button type="submit" class="login100-form-btn">
+							Упорядочить по среднему баллу
+						</button>
+						
+						</form> <font>&#8194;</font>
+        <form th:action="@{/ufac}" method="post" class="buttonform">
+       <button type="submit" class="login100-form-btn">
+							Подат заявки на отмеченные факультеты
+						</button>
+       </form>
+					
+       </span>
+       <br><br><br> <br><br><br> <br><br><br> <br><br><br> <br><br><br><br><br>
+        <form action="/hello">
+   <button class="login100-form-btn" >Обратно</button>
+  </form>
+      </body>
+      </html>
